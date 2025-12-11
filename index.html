@@ -1,0 +1,47 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+  />
+  <!--<script src="https://cdn.jsdelivr.net/npm/accessible-menu@4.2.0/dist/accessible-menu.iife.min.js"></script>-->
+  <!--<script>
+    if (window.AccessibleMenu && !window.AccessibleMenu.menus) {
+      window.AccessibleMenu.menus = {};
+    }
+  </script>-->
+</head>
+<body>
+  <header>
+    <nav id="example-menu" aria-label="example">
+      <img alt="ATS" />
+         <a id="apply-now" href="#">Apply Now</a>
+         <button id="trigger" type="button">
+           <span class="navbar-toggler-icon"
+             <i class="fas fa-bars"></i>
+           ></span>
+         </button>
+         <ul id="main-nav">
+           <li class="dropdown">
+           <button class="dropdown-button">Openings<i class="fa fa-angle-right nav-link-arrow"></i></button>
+             <ul class="menu-depth-2">
+               <li class="dropdown">
+                 <button class="menu-depth-2-button"> company driver <i class="fa fa-angle-right nav-link-arrow"></i></button>
+                 <ul class="menu-depth-3">
+                   <li><a href="#">OTR Flatbed Company</a></li>
+                   <li><a href="#">OTR Van Company</a></li>
+                 </ul>
+               </li>
+               <li><a href="#">Lease Operator</a></li>
+             </ul>
+           </li>
+           <li><a href="#">Onboarding Areas</a></li>
+           <li><a href="#">Resources</a></li>
+           <li><a href="#">Pay</a></li>
+         </ul>
+       </nav>
+  </header>
+  <script type="module" src="index.js"></script>
+</body>
