@@ -1,4 +1,4 @@
-import accessibleMenu from "https://esm.sh/accessible-menu@4.2.0";
+import accessibleMenu from "https://esm.sh/accessible-menu@4.2.2";
 
 document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector("nav");
@@ -11,6 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     containerElement: nav,
     controllerElement,
     optionalKeySupport: true,
-    hoverType: "dynamic", // "on", "off"
+    hoverType: "on", // "on", "off"
   });
 });

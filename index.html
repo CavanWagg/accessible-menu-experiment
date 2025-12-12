@@ -16,32 +16,70 @@
 <body>
   <header>
     <nav id="example-menu" aria-label="example">
-      <img alt="ATS" />
-         <a id="apply-now" href="#">Apply Now</a>
-         <button id="trigger" type="button">
-           <span class="navbar-toggler-icon"
-             <i class="fas fa-bars"></i>
-           ></span>
-         </button>
-         <ul id="main-nav">
-           <li class="dropdown">
-           <button class="dropdown-button">Openings<i class="fa fa-angle-right nav-link-arrow"></i></button>
-             <ul class="menu-depth-2">
-               <li class="dropdown">
-                 <button class="menu-depth-2-button"> company driver <i class="fa fa-angle-right nav-link-arrow"></i></button>
-                 <ul class="menu-depth-3">
-                   <li><a href="#">OTR Flatbed Company</a></li>
-                   <li><a href="#">OTR Van Company</a></li>
-                 </ul>
-               </li>
-               <li><a href="#">Lease Operator</a></li>
-             </ul>
-           </li>
-           <li><a href="#">Onboarding Areas</a></li>
-           <li><a href="#">Resources</a></li>
-           <li><a href="#">Pay</a></li>
-         </ul>
-       </nav>
+      <div class="nav-logo-container">
+        <img alt="ATS" />
+        <p class="established-description">Since 1955</p>
+      </div>
+      <ul class="nav-icon-list">
+        <li>
+          <a id="apply-now" href="#">Apply Now</a>
+        </li>
+        <ul>
+          <li>
+            <a class="dynamicPhoneNumber" href="tel:+18887193212">
+              <i class="fa fa-phone"></i>
+            </a>
+          </li>
+          <li class="list-item-divide">|</li>
+          <li class="btn-search"><i class="fa fa-search"></i></li>
+        </ul>
+      </ul>
+      <button id="trigger" type="button">
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars"></i>
+        </span>
+      </button>
+      <ul id="main-nav">
+        <li tabindex="2" class="dropdown">
+          <button class="dropdown-button">
+            Openings<i class="fa fa-angle-right nav-link-arrow"></i>
+          </button>
+          <ul class="menu-depth-2">
+            <li class="dropdown">
+              <button class="menu-depth-2-button">
+                Company Driver <i class="fa fa-angle-right nav-link-arrow"></i>
+              </button>
+              <ul class="menu-depth-3">
+                <li><a href="#">OTR Flatbed Company</a></li>
+                <li><a href="#">OTR Van Company</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Lease Operator</a></li>
+          </ul>
+        </li>
+        <li tabindex="2"><a href="#">Onboarding Areas</a></li>
+        <li tabindex="2"><a href="#">Resources</a></li>
+        <li tabindex="2"><a href="#">Pay</a></li>
+        <li class="searchbar">
+          <button type="button" class="search-wrapper">
+            <form
+              role="search"
+              method="get"
+              id="searchform"
+              action="https://www.drive4ats.com/"
+            >
+              <input
+                type="search"
+                id="s"
+                name="s"
+                placeholder="Type here to search"
+              />
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </button>
+        </li>
+      </ul>
+    </nav>
   </header>
   <script type="module" src="index.js"></script>
 </body>
