@@ -1,32 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* global */
-
-.searchbar .search-wrapper {
-  background: none;
-  border: none;
-  padding: 0;
-  width: 100%;
-  cursor: default;
-}
-
-.searchbar .search-wrapper:focus {
-  outline: none;
-}
-
-.searchbar form {
-  pointer-events: auto;
-}
-
-.searchbar input,
-.searchbar button[type="submit"] {
-  pointer-events: auto;
+/* Global */
+body {
+  margin: 0;
 }
 
 header {
   display: contents;
 }
 
+p {
+  color: #fff;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &.hide {
+    display: none;
+  }
+}
+
+/* Searchbar */
+.searchbar {
+  .search-wrapper {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 100%;
+    cursor: default;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  form,
+  input,
+  button[type="submit"] {
+    pointer-events: auto;
+  }
+}
+
+/* Navigation */
 nav {
   --primary: #3b4c58;
   font-family: "Montserrat", sans-serif;
@@ -36,6 +55,7 @@ nav {
   column-gap: 1rem;
   grid-template-rows: 90px auto;
   align-items: center;
+
   #trigger {
     margin-right: 2rem;
   }
@@ -50,28 +70,10 @@ nav {
 
 .nav-icon-list {
   justify-self: end;
+
   ul {
     display: none;
   }
-}
-
-p {
-  color: #fff;
-}
-
-body {
-  margin: 0;
-}
-
-ul,
-li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul.hide {
-  display: none;
 }
 
 .main-nav-container {
@@ -101,6 +103,10 @@ ul.hide {
 }
 
 #main-nav {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  background: #ecedee;
+
   li,
   button {
     font-weight: 700;
@@ -108,69 +114,65 @@ ul.hide {
     text-transform: uppercase;
     color: var(--primary);
   }
-}
 
-#main-nav {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  background: #ecedee;
   li {
     form {
       display: flex;
       border-bottom: 1px solid #aebbc6;
       padding: 1rem 0;
       margin: 0 1.5rem;
+
       button {
         width: auto;
         border-bottom: none;
         margin-left: 0;
       }
+
       input {
         width: 200px;
       }
     }
   }
-}
 
-#main-nav.show li a {
-  display: block;
-  color: var(--primary);
-  text-decoration: none;
-  margin: 0 1.5rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid #aebbc6;
-}
+  &.show li a {
+    display: block;
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #aebbc6;
+  }
 
-#main-nav li button {
-  width: calc(100% - 3rem);
-  cursor: pointer;
-  border: 0;
-  text-align: inherit;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--primary);
-  text-decoration: none;
-  margin: 0 1.5rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid #aebbc6;
-  background: none;
-  font: inherit;
-}
+  li button {
+    width: calc(100% - 3rem);
+    cursor: pointer;
+    border: 0;
+    text-align: inherit;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #aebbc6;
+    background: none;
+    font: inherit;
+  }
 
-#main-nav ul.menu-depth-2 li {
-  font-weight: 500;
-  text-transform: none;
-  background-color: #fff;
-}
+  ul.menu-depth-2 li {
+    font-weight: 500;
+    text-transform: none;
+    background-color: #fff;
+  }
 
-#main-nav ul.menu-depth-3 a {
-  padding-left: 1rem;
-}
+  ul.menu-depth-3 {
+    a {
+      padding-left: 1rem;
+    }
 
-#main-nav ul.menu-depth-3 li {
-  font-weight: 300;
-  text-transform: none;
-  font-style: italic;
+    li {
+      font-weight: 300;
+      text-transform: none;
+      font-style: italic;
+    }
+  }
 }
 
 /* Arrow icon styles */
@@ -191,7 +193,7 @@ button[aria-expanded="true"] .fa-angle-right:before {
     display: flex;
     height: 90px;
     justify-content: center;
-    /* Hide hamburger menu on desktop */
+
     #trigger {
       display: none;
     }
@@ -218,145 +220,137 @@ button[aria-expanded="true"] .fa-angle-right:before {
         gap: 0.5rem;
       }
     }
+  }
 
-    .menu-depth-2 li.dropdown {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  #apply-now {
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
+
+  #main-nav {
+    display: flex !important;
+    flex-direction: row;
+    grid-column: 2 / 3;
+    grid-row: 1;
+    margin: 0;
+    background: transparent;
+    gap: 1rem;
+
+    #searchform {
+      display: none;
     }
 
-    #main-nav {
-      display: flex !important;
-      flex-direction: row;
-      grid-column: 2 / 3;
-      grid-row: 1;
-      margin: 0;
-      background: transparent;
-      gap: 1rem;
-
-      ul.menu-depth-2 li {
-        font-weight: 700;
-      }
-
-      ul.menu-depth-3 li {
-        font-weight: 700;
-        text-transform: none;
-        font-style: normal;
-      }
-
-      #searchform {
-        display: none;
-      }
-    }
-
-    #main-nav > li {
+    > li {
       position: relative;
+
+      > a,
+      > button {
+        color: inherit;
+        margin: 0;
+        padding: 0.5rem 1rem;
+        border: none;
+        text-decoration: none;
+        background: none;
+        width: auto;
+        display: flex;
+        align-items: center;
+      }
     }
 
-    #main-nav li button {
-      white-space: nowrap;
-      text-transform: inherit;
+    li {
+      color: #fff;
+
+      &:hover {
+        background: #fff;
+        color: #3c4b57;
+      }
+
+      button {
+        white-space: nowrap;
+        text-transform: inherit;
+        color: inherit;
+        border-bottom: none;
+      }
     }
 
-    #main-nav > li > a,
-    #main-nav > li > button {
-      color: inherit;
-      margin: 0;
-      padding: 0.5rem 1rem;
-      border: none;
-      text-decoration: none;
-      background: none;
-      width: auto;
-      display: flex;
-      align-items: center;
-    }
-
-    #apply-now {
-      grid-column: 3 / 4;
-      grid-row: 1;
-    }
-
-    #main-nav ul.menu-depth-2 li {
+    ul.menu-depth-2 li {
+      font-weight: 700;
       background: transparent;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
       &:hover {
         background: #fff;
         color: #3c4b57;
       }
     }
 
-    #main-nav li button {
-      color: inherit;
-      border-bottom: none;
+    ul.menu-depth-3 li {
+      font-weight: 700;
+      text-transform: none;
+      font-style: normal;
     }
+  }
 
-    #main-nav li {
-      color: #fff;
-      &:hover {
-        background: #fff;
-        color: #3c4b57;
+  .menu-depth-2,
+  .menu-depth-3 {
+    background: rgba(60, 75, 87, 0.85) !important;
+    color: #fff;
+
+    li {
+      background: transparent;
+
+      &.dropdown {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      a,
+      button {
+        display: block;
+        color: inherit;
+        margin: 0 1.5rem;
+        padding: 1rem 0;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--primary);
+        }
+      }
+
+      button {
+        width: calc(100% - 3rem);
       }
     }
+  }
 
-    /* Dropdown background with opacity */
-    .menu-depth-2,
-    .menu-depth-3 {
-      background: rgba(60, 75, 87, 0.85) !important;
-      color: #fff;
-    }
+  .menu-depth-2 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 100;
 
-    .menu-depth-2 li,
-    .menu-depth-3 li {
-      background: transparent;
-    }
-
-    /* Dropdown positioning */
-    .menu-depth-2 {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 200px;
-      z-index: 100;
-    }
-
-    .menu-depth-2.show {
+    &.show {
       display: block;
     }
 
-    .menu-depth-2 li {
+    li {
       position: relative;
     }
+  }
 
-    /* Nested dropdowns appear to the right */
-    .menu-depth-3 {
-      position: absolute;
-      top: 0;
-      left: 100%;
-      min-width: 200px;
-      z-index: 101;
-    }
+  .menu-depth-3 {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+    z-index: 101;
 
-    .menu-depth-3.show {
+    &.show {
       display: block;
     }
+  }
 
-    /* Keep existing dropdown item styles */
-    .menu-depth-2 li a,
-    .menu-depth-2 li button {
-      display: block;
-      color: inherit;
-      margin: 0 1.5rem;
-      padding: 1rem 0;
-      text-decoration: none;
-      &:hover {
-        color: var(--primary);
-      }
-    }
-
-    .menu-depth-2 li button {
-      width: calc(100% - 3rem);
-    }
-
-    button[aria-expanded="true"] .fa-angle-right:before {
-      content: "\f107";
-    }
+  button[aria-expanded="true"] .fa-angle-right:before {
+    content: "\f107";
   }
 }
