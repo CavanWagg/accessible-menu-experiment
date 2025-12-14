@@ -40,6 +40,18 @@
         </span>
       </button>
       <ul id="main-nav">
+        <li class="searchbar" aria-hidden="true">
+          <a href="#" tabindex="-1" style="display: none"></a>
+          <form
+            role="search"
+            method="get"
+            id="searchform"
+            action="https://www.drive4ats.com/"
+          >
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <input type="search" id="s" name="s" />
+          </form>
+        </li>
         <li tabindex="2" class="dropdown">
           <button class="dropdown-button">
             Openings<i class="fa fa-angle-right nav-link-arrow"></i>
@@ -60,24 +72,6 @@
         <li tabindex="2"><a href="#">Onboarding Areas</a></li>
         <li tabindex="2"><a href="#">Resources</a></li>
         <li tabindex="2"><a href="#">Pay</a></li>
-        <li class="searchbar">
-          <button type="button" class="search-wrapper">
-            <form
-              role="search"
-              method="get"
-              id="searchform"
-              action="https://www.drive4ats.com/"
-            >
-              <input
-                type="search"
-                id="s"
-                name="s"
-                placeholder="Type here to search"
-              />
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-          </button>
-        </li>
       </ul>
     </nav>
   </header>

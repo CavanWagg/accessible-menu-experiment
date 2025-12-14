@@ -2,6 +2,27 @@
 
 /* global */
 
+.searchbar .search-wrapper {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  cursor: default;
+}
+
+.searchbar .search-wrapper:focus {
+  outline: none;
+}
+
+.searchbar form {
+  pointer-events: auto;
+}
+
+.searchbar input,
+.searchbar button[type="submit"] {
+  pointer-events: auto;
+}
+
 header {
   display: contents;
 }
@@ -79,18 +100,36 @@ ul.hide {
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-#main-nav li,
-#main-nav button {
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
-  color: var(--primary);
+#main-nav {
+  li,
+  button {
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
 }
 
 #main-nav {
   grid-column: 1 / -1;
   grid-row: 2;
   background: #ecedee;
+  li {
+    form {
+      display: flex;
+      border-bottom: 1px solid #aebbc6;
+      padding: 1rem 0;
+      margin: 0 1.5rem;
+      button {
+        width: auto;
+        border-bottom: none;
+        margin-left: 0;
+      }
+      input {
+        width: 200px;
+      }
+    }
+  }
 }
 
 #main-nav.show li a {
@@ -201,6 +240,10 @@ button[aria-expanded="true"] .fa-angle-right:before {
         font-weight: 700;
         text-transform: none;
         font-style: normal;
+      }
+
+      #searchform {
+        display: none;
       }
     }
 
